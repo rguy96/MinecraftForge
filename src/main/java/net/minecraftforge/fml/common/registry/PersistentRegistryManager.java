@@ -232,6 +232,11 @@ public class PersistentRegistryManager
         return PersistentRegistry.ACTIVE.registries.inverse().get(registry);
     }
 
+    public static IForgeRegistry<?> findRegistryByName(ResourceLocation registryName)
+    {
+        return PersistentRegistry.ACTIVE.registries.get(registryName);
+    }
+
     public static List<String> injectSnapshot(GameDataSnapshot snapshot, boolean injectFrozenData, boolean isLocalWorld)
     {
         FMLLog.info("Injecting existing block and item data into this %s instance", FMLCommonHandler.instance().getEffectiveSide().isServer() ? "server" : "client");

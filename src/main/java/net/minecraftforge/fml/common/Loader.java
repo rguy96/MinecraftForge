@@ -38,6 +38,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.common.crafting.CraftingHelper;
+import net.minecraftforge.common.objectdict.ObjectDictionaryManager;
 import net.minecraftforge.fml.common.LoaderState.ModState;
 import net.minecraftforge.fml.common.ModContainer.Disableable;
 import net.minecraftforge.fml.common.ProgressManager.ProgressBar;
@@ -826,6 +827,7 @@ public class Loader
     {
         progressBar.step("Initializing mods Phase 2");
         CraftingHelper.loadRecipes();
+        ObjectDictionaryManager.loadObjectDicts();
         // Mod controller should be in the initialization state here
         modController.distributeStateMessage(LoaderState.INITIALIZATION);
         progressBar.step("Initializing mods Phase 3");
